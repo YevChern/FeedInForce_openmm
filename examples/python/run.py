@@ -82,7 +82,6 @@ for num_inter in range(1, 3):
     # forces_vec will contain external forces that we want to feed into OpenMM.
     # Get current positions of the particles for concentration field/forces calculation
     forces_vec = caclSubstrateForces(simulation.context.getState(getPositions=True).getPositions())
-    current_positions = simulation.context
     # Feed external forces into OpenMM
     in_force.updateForceInContext(simulation.context, forces_vec)
     # Advance simulation for 1 steps
